@@ -5,36 +5,36 @@ import java.util.Scanner;
 public class ejercicio06 {
 
 
-	    public static boolean esPrimo(int numero) {
-	        if (numero <= 1) {
-	            return false;
-	        }
-	        for (int i = 2; i <= Math.sqrt(numero); i++) {
-	            if (numero % i == 0) {
-	                return false;
-	            }
-	        }
-	        return true;
-	    }
-
-	    public static void imprimirPrimos(int n) {
-	        System.out.println("Números primos entre 1 y " + n + ":");
-	        for (int i = 2; i <= n; i++) {
-	            if (esPrimo(i)) {
-	                System.out.print(i + " ");
-	            }
-	        }
-	        System.out.println();
-	    }
-
-	    public static void main(String[] args) {
-	        Scanner entrada = new Scanner(System.in);
-	        System.out.println("ingrese un número: ");
-	        int n = entrada.nextInt();
-	        imprimirPrimos(n);
-	        entrada.close();
-	    }
+	public static int convertirASegundos(int horas,int minutos, int segundos) {
+		
+		if (horas<0 || minutos<0 || segundos<0) {
+			return 0;
+		}
+		int segundosConversion = 0;
+		segundosConversion += horas*3600;
+		segundosConversion += minutos*60;
+		segundosConversion += segundos;
+		
+		return segundosConversion;
 	}
+
+	public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de horas: ");
+        int horas = entrada.nextInt();
+        System.out.print("Ingrese el número de minutos: ");
+        int minutos = entrada.nextInt();
+        System.out.print("Ingrese el número de segundos: ");
+        int segundos = entrada.nextInt();
+
+        int totalSegundos = convertirASegundos(horas, minutos, segundos);
+        System.out.println("El tiempo total en segundos es: " + totalSegundos);
+
+        entrada.close();
+
+	}
+}
 
 
 
