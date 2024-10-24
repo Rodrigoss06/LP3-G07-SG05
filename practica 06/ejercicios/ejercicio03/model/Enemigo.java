@@ -1,5 +1,4 @@
 package model;
-
 import java.util.Random;
 
 public class Enemigo {
@@ -30,7 +29,7 @@ public class Enemigo {
 
     public void atacar(Jugador jugador) {
         Random random = new Random();
-        int danio = random.nextInt(nivel * 10); // El daño del enemigo es aleatorio y depende del nivel.
+        int danio = random.nextInt(nivel * 10); 
         jugador.recibirDanio(danio);
         System.out.println(nombre + " ataca a " + jugador.getNombre() + " causando " + danio + " de daño.");
     }

@@ -25,7 +25,7 @@ public class Main {
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Limpiar el buffer de entrada
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -36,7 +36,7 @@ public class Main {
                     String nombre = scanner.nextLine();
                     System.out.print("Cantidad: ");
                     int cantidad = scanner.nextInt();
-                    scanner.nextLine();  // Limpiar el buffer
+                    scanner.nextLine(); 
                     System.out.print("Tipo (Arma, Poción, etc.): ");
                     String tipo = scanner.nextLine();
                     System.out.print("Descripción: ");

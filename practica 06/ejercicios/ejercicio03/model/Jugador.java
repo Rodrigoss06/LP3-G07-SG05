@@ -4,15 +4,15 @@ public class Jugador {
     private String nombre;
     private int salud;
     private int nivel;
-    private int saludMaxima = 100;  // Salud máxima del jugador
-    private InventarioModel inventario;  // Inventario del jugador
-    private Item itemEquipado;  // Item actualmente equipado para atacar
+    private int saludMaxima = 100;  
+    private InventarioModel inventario;  
+    private Item itemEquipado; 
 
     public Jugador(String nombre, int salud, int nivel) {
         this.nombre = nombre;
         this.salud = salud;
         this.nivel = nivel;
-        this.inventario = new InventarioModel();  // Inicializar el inventario vacío
+        this.inventario = new InventarioModel();
     }
 
     public String getNombre() {
@@ -29,7 +29,7 @@ public class Jugador {
 
     public void recibirDanio(int danio) {
         this.salud -= danio;
-        if (salud < 0) salud = 0;  // Evitar salud negativa
+        if (salud < 0) salud = 0; 
         System.out.println(nombre + " ha recibido " + danio + " de daño. Salud restante: " + salud);
     }
 
@@ -46,7 +46,7 @@ public class Jugador {
     private void curar(int cantidad) {
         this.salud += cantidad;
         if (this.salud > saludMaxima) {
-            this.salud = saludMaxima;  // Limitar la salud a la salud máxima
+            this.salud = saludMaxima; 
         }
         System.out.println(nombre + " ha sido curado en " + cantidad + " puntos. Salud actual: " + salud);
     }
@@ -62,7 +62,7 @@ public class Jugador {
 
     public void atacar(Enemigo enemigo) {
         if (itemEquipado != null && itemEquipado.getTipo().equals("Arma")) {
-            int danio = itemEquipado.getEfecto();  // La espada tiene un daño fijo alto
+            int danio = itemEquipado.getEfecto(); 
             enemigo.recibirDanio(danio);
             System.out.println(nombre + " ataca a " + enemigo.getNombre() + " con " + itemEquipado.getNombre() + " y causa " + danio + " de daño.");
         } else {
